@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="SupplementProcessor.UserControls.ItemProperties"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SupplementProcessor" xmlns:UserControls="clr-namespace:SupplementProcessor.UserControls" 
+             mc:Ignorable="d" Height="78" Width="649">
+    <Grid>
+        <Label Content="Header" HorizontalAlignment="Left" Margin="242,29,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxCaption" HorizontalAlignment="Left" Height="23" Margin="153,1,0,0" TextWrapping="Wrap" Text="Caption" VerticalAlignment="Top" Width="154" TextDecorations="{x:Null}"/>
+
+        <UserControls:FontChooser x:Name="FontChooser" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,0,0,0"/>
+        <UserControls:XLSColumnBinding Caption="" x:Name="XLSColumn"  HorizontalAlignment="Left" Margin="19,29,0,0" VerticalAlignment="Top" Width="111"/>
+        <local:Vector2DField x:Name="Vector2DPosition" HorizontalAlignment="Left" Margin="-85,0,0,0" VerticalAlignment="Top" Caption="" Height="29" Width="258" X="10" Y="10" XLabelContent="X" YLabelContent="Y"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,18 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SupplementProcessor" xmlns:UserControls="clr-namespace:SupplementProcessor.UserControls" x:Class="SupplementProcessor.ItemPropertiesWindow"
+        Title="ItemPropertiesWindow" Height="254" Width="329" WindowStartupLocation="CenterScreen" WindowStyle = "ToolWindow" ResizeMode="NoResize">
+    <Grid>
+
+        <local:Vector2DField x:Name="Vector2DPosition" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Caption="Position" Height="29" Width="258" X="10" Y="10" XLabelContent="X" YLabelContent="Y"/>
+        <Label Content="Header" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxCaption" HorizontalAlignment="Left" Height="23" Margin="77,44,0,0" TextWrapping="Wrap" Text="Caption" VerticalAlignment="Top" Width="154" TextDecorations="{x:Null}"/>
+        <Button x:Name="ButtonOK" Content="OK" HorizontalAlignment="Left" Margin="155,197,0,0" VerticalAlignment="Top" Width="75" Background="#FF00B9FF" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="ButtonOK_Click" />
+        <Button x:Name="ButtonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="235,197,0,0" VerticalAlignment="Top" Width="75" Background="#FF00B9FF" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="ButtonCancel_Click" />
+
+        <UserControls:FontChooser x:Name="FontChooser" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top"/>
+        <UserControls:XLSColumnBinding x:Name="XLSColumn" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="193"/>
+
+    </Grid>
+</Window>

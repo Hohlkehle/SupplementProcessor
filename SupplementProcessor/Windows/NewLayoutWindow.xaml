@@ -1,0 +1,15 @@
+﻿<Window x:Class="SupplementProcessor.Windows.NewLayoutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Create New Layout" Height="150" Width="300"
+        WindowStartupLocation="CenterScreen" WindowStyle = "ToolWindow" ResizeMode="NoResize">
+    <Grid>
+        <TextBox x:Name="TextBoxContent" HorizontalAlignment="Left" Height="23" Margin="119,13,0,0" TextWrapping="Wrap" Text="New Layout" VerticalAlignment="Top" Width="163"/>
+        <Label Content="Layout Name" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="104"/>
+        <ComboBox x:Name="ComboBoxLayoutType" HorizontalAlignment="Left" Margin="119,48,0,0" VerticalAlignment="Top" Width="163"/>
+        <Label Content="Layout Type" HorizontalAlignment="Left" Height="29" Margin="10,44,0,0" VerticalAlignment="Top" Width="104"/>
+        <Button x:Name="ButtonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="207,88,0,0" VerticalAlignment="Top" Width="75" Click="ButtonCancel_Click"/>
+        <Button x:Name="ButtonOK" Content="OK" HorizontalAlignment="Left" Margin="119,88,0,0" VerticalAlignment="Top" Width="75" Click="ButtonOK_Click"/>
+
+    </Grid>
+</Window>

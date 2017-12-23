@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="SupplementProcessor.UserControls.Table"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Border x:Name="BorderContour" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderThickness="1" Visibility="Hidden"></Border >
+        <Grid x:Name="TableGrid">
+            <Grid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="_Properties" x:Name="MenuItemShowProperties" Click="MenuItemShowProperties_Click" />
+                    <MenuItem Header="_Delete" x:Name="MenuItemDelete" Click="MenuItemDelete_Click" />
+                </ContextMenu>
+            </Grid.ContextMenu>
+
+
+            <Border Grid.Column="1" Grid.RowSpan="50" BorderThickness="1" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" IsHitTestVisible="False"/>
+
+        </Grid>
+    </Grid>
+
+</UserControl>

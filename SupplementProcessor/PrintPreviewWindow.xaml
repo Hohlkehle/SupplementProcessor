@@ -1,0 +1,15 @@
+﻿<Window x:Class="SupplementProcessor.PrintPreviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PrintPreviewWindow" Height="559" Width="793">
+    <Grid>
+        <DocumentViewer x:Name="documentViewer">
+            <DocumentViewer.Resources>
+                <!-- Hides the search box-->
+                <Style TargetType="ContentControl">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                </Style>
+            </DocumentViewer.Resources>
+        </DocumentViewer>
+    </Grid>
+</Window>

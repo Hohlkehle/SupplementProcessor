@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="SupplementProcessor.UserControls.LayoutEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:WPF.JoshSmith.Controls" xmlns:local="clr-namespace:SupplementProcessor" xmlns:WpfRuler="clr-namespace:WpfRuler" xmlns:UserControls="clr-namespace:SupplementProcessor.UserControls"
+             mc:Ignorable="d" 
+             Loaded="LayoutEditor_Loaded" KeyUp="LayoutEditor_KeyUp" KeyDown="LayoutEditor_KeyDown"
+             d:DesignHeight="559" d:DesignWidth="793" Margin="0,0,0,0" Focusable="True" LostFocus="UserControl_LostFocus" IsTabStop="True">
+    <Canvas x:Name="myCanvas">
+        <!--<Border BorderBrush="Black" BorderThickness="1"/>-->
+        <Image x:Name="ImageBackground" Source="../img/grid.jpg" Stretch="None" HorizontalAlignment="Left" Margin="0,0,0,0" Height="559" Width="793">
+            <Image.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header = "_Add" >
+                        <MenuItem Header = "_Span" x:Name="MenuItemAddSimpleLabel" Click="MenuItemAddSimpleLabel_Click"  >
+                            <MenuItem.Icon>
+                                <Image Source="../img/icons/footnote.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header = "_Table"  x:Name="MenuItemaAddTable" Click="MenuItemaAddTable_Click" >
+                            <MenuItem.Icon>
+                                <Image Source="../img/icons/insert_table.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header = "_ZSumbol" x:Name="MenuItemAddZSumbol" Click="MenuItemAddZSumbol_Click">
+                            <MenuItem.Icon>
+                                <Image Source="../img/icons/insert_symbol.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header = "_Guide Line" x:Name="MenuItemAddGuideLine" Click="MenuItemAddGuideLine_Click">
+                            <MenuItem.Icon>
+                                <Image Source="../img/icons/pagesize.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem.Icon>
+                            <Image Source="../img/icons/insert_symbol.png" Width="16" Height="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+
+                    <MenuItem Header="Reload" x:Name="MenuItemReloadLayout" Click="MenuItemReloadLayout_Click">
+                        <MenuItem.Icon>
+                            <Image Source="../img/icons/refresh.png" Width="16" Height="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header = "_Choose Background"  x:Name="MenuItemSetBackground" Click="MenuItemSetBackground_Click">
+                        <MenuItem.Icon>
+                            <Image Source="../img/icons/picture.png" Width="16" Height="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header = "_Save Layout"  x:Name="MenuItemSaveLayout" Click="MenuItemSaveLayout_Click" >
+                        <MenuItem.Icon>
+                            <Image Source="../img/icons/save.png" Width="16" Height="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header = "_Close"  x:Name="MenuItemClose" Click="MenuItemClose_Click" >
+                        <MenuItem.Icon>
+                            <Image Source="../img/icons/OpenDoor.png" Width="16" Height="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </Image.ContextMenu>
+        </Image>
+
+       <WpfRuler:PixelRuler Height="21" Width="793" SmallStep="0.5" RenderTransformOrigin="0,0" Step="1" AutoSize="True"/>
+        <WpfRuler:PixelRuler Height="19" Width="793" AutoSize="True" SmallStep="0.5" RenderTransformOrigin="0,0" Step="1" Marks="Down" Canvas.Left="18">
+            <WpfRuler:PixelRuler.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </WpfRuler:PixelRuler.RenderTransform>
+        </WpfRuler:PixelRuler>
+       
+        
+    </Canvas>
+
+</UserControl>

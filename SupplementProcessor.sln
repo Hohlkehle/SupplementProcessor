@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupplementProcessor", "SupplementProcessor\SupplementProcessor.csproj", "{2A16CEB7-5037-4BB5-BC2C-429546BECC7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorFont", "..\ColorFont\ColorFont\ColorFont.csproj", "{C51DEEDA-B581-401B-870B-DBB7D10119BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToggleSwitch", "..\SupplementPrint\ToggleSwitch\ToggleSwitch.csproj", "{F9426059-27DB-45F0-9012-B1234965FBE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutFileSystem", "LayoutFile\LayoutFileSystem.csproj", "{43E46063-2D76-45AC-A042-D39ED9AED216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutFileSystemTest", "LayoutFileSystemTest\LayoutFileSystemTest.csproj", "{1BB4A554-21B5-47B7-8CD2-DF118CB1D5BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyGenerator", "KeyGenerator\KeyGenerator.csproj", "{D6B6C458-8C3D-40D9-8192-57FF92A31175}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A16CEB7-5037-4BB5-BC2C-429546BECC7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A16CEB7-5037-4BB5-BC2C-429546BECC7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A16CEB7-5037-4BB5-BC2C-429546BECC7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A16CEB7-5037-4BB5-BC2C-429546BECC7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9426059-27DB-45F0-9012-B1234965FBE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9426059-27DB-45F0-9012-B1234965FBE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9426059-27DB-45F0-9012-B1234965FBE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9426059-27DB-45F0-9012-B1234965FBE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43E46063-2D76-45AC-A042-D39ED9AED216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E46063-2D76-45AC-A042-D39ED9AED216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E46063-2D76-45AC-A042-D39ED9AED216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E46063-2D76-45AC-A042-D39ED9AED216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BB4A554-21B5-47B7-8CD2-DF118CB1D5BA}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB4A554-21B5-47B7-8CD2-DF118CB1D5BA}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{1BB4A554-21B5-47B7-8CD2-DF118CB1D5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB4A554-21B5-47B7-8CD2-DF118CB1D5BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6B6C458-8C3D-40D9-8192-57FF92A31175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6B6C458-8C3D-40D9-8192-57FF92A31175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6B6C458-8C3D-40D9-8192-57FF92A31175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6B6C458-8C3D-40D9-8192-57FF92A31175}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

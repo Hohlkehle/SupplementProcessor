@@ -1,0 +1,26 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:SupplementProcessor="clr-namespace:SupplementProcessor" xmlns:UserControls="clr-namespace:SupplementProcessor.UserControls" x:Class="SupplementProcessor.Windows.TablePropertiesWindow"
+        Title="Table properties" Height="426" Width="350" WindowStartupLocation="CenterScreen" WindowStyle = "ToolWindow" ResizeMode="NoResize">
+    <Grid>
+
+        <SupplementProcessor:Vector2DField x:Name="Vector2DPosition" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Caption="Position" Height="29" Width="258" X="10" Y="10" XLabelContent="X" YLabelContent="Y"/>
+        <Label Content="Row Count" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxRowCount" HorizontalAlignment="Left" Height="23" Margin="77,44,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="39"/>
+        <Label Content="Row Height" HorizontalAlignment="Left" Margin="9,69,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxCellHeight" HorizontalAlignment="Left" Height="23" Margin="77,72,0,0" TextWrapping="Wrap" Text="55" VerticalAlignment="Top" Width="39"/>
+
+        <Label Content="mm" HorizontalAlignment="Left" Margin="121,69,0,0" VerticalAlignment="Top"/>
+        <UserControls:XLSColumnBinding x:Name="XLSColumn" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+        <GroupBox Header="Discipline font settings" HorizontalAlignment="Left" Height="115" Margin="10,128,0,0" VerticalAlignment="Top" Width="321">
+            <UserControls:FontChooser x:Name="FontChooser" HorizontalAlignment="Left" Margin="4,9,0,0" VerticalAlignment="Top"/>
+        </GroupBox>
+        <GroupBox Header="Assessments font settings" HorizontalAlignment="Left" Height="115" Margin="10,248,0,0" VerticalAlignment="Top" Width="321">
+            <UserControls:FontChooser x:Name="FontChooser2" HorizontalAlignment="Left" Margin="4,9,0,0" VerticalAlignment="Top"/>
+        </GroupBox>
+        <Button x:Name="ButtonAdd" Content="OK" HorizontalAlignment="Left" Margin="169,368,0,0" VerticalAlignment="Top" Width="75" Background="#FF00B9FF" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="ButtonAdd_Click" />
+        <Button x:Name="ButtonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="249,368,0,0" VerticalAlignment="Top" Width="75" Background="#FF00B9FF" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="ButtonCancel_Click" />
+
+    </Grid>
+</Window>

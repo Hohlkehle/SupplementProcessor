@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="SupplementProcessor.TextLine"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="30" Width="351">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="244*" x:Name="GridColumnDefinition0"/>
+            <ColumnDefinition Width="Auto" MinWidth="4"/>
+            <ColumnDefinition Width="103*" x:Name="GridColumnDefinition1"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="AliceBlue" Margin="1,0"/>
+        <TextBlock x:Name="DisciplineTextBlock" TextWrapping="Wrap" Text="The following creates a horizontal and vertical " FontFamily="Times New Roman" FontWeight="Bold" Margin="0,0,10,2" />
+
+        <TextBlock x:Name="AssessmentTextBlock" Grid.Column="2" TextWrapping="Wrap" Text="12 (дванадцять)" FontFamily="Times New Roman" FontWeight="Bold" Margin="10,0,0,2"/>
+    </Grid>
+</UserControl>

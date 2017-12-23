@@ -1,0 +1,16 @@
+﻿<Window x:Class="SupplementProcessor.SelectLayoutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SelectLayoutWindow" Height="121" Width="198" Icon="img/k_pridnestrovyu_styagivayut_voennuyu_tehniku_ukrainy.png" 
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen" WindowStyle = "ToolWindow" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="img/trianglify-background-6-600x260.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid>
+        <ComboBox x:Name="ComboBoxLayoutsNames" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="162"/>
+        <Button x:Name="ButtonSelect" Content="Select" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="75" Background="#FF00B9FF"  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"  Click="ButtonSelect_Click"/>
+        <Button x:Name="ButtonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="97,58,0,0" VerticalAlignment="Top" Width="75" Background="#FF00B9FF"  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"  Click="ButtonCancel_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A16CEB7-5037-4BB5-BC2C-429546BECC7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SupplementProcessor</RootNamespace>
+    <AssemblyName>SupplementProcessor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AppSoftware.LicenceEngine.Common">
+      <HintPath>libs\AppSoftware.LicenceEngine.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="AppSoftware.LicenceEngine.KeyVerification">
+      <HintPath>libs\AppSoftware.LicenceEngine.KeyVerification.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="RtwControls.DraggableLabel">
+      <HintPath>libs\RtwControls.DraggableLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>libs\avalondock\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\ActionHistory.cs" />
+    <Compile Include="Commands\AddCommand.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\RemoveCommand.cs" />
+    <Compile Include="Commands\MoveCommand.cs" />
+    <Compile Include="Commands\TablePropertiesCommand.cs" />
+    <Compile Include="Commands\TextSpanPropertiesCommand.cs" />
+    <Compile Include="Commands\UndoCommand.cs" />
+    <Compile Include="Data\RowDataInfo.cs" />
+    <Compile Include="Data\SupplementFormatingInfo.cs" />
+    <Compile Include="Data\LayoutEditorSelectionEventArgs.cs" />
+    <Compile Include="Security\License.cs" />
+    <Compile Include="UserControls\ItemProperties.xaml.cs">
+      <DependentUpon>ItemProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LayoutEditor.xaml.cs">
+      <DependentUpon>LayoutEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddLabelWindow.xaml.cs">
+      <DependentUpon>AddLabelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CanvasItemInfo.cs" />
+    <Compile Include="Data\CaptionInfo.cs" />
+    <Compile Include="Data\ZSumbolInfo.cs" />
+    <Compile Include="Data\GuideLineInfo.cs" />
+    <Compile Include="Data\IDraggableUIElement.cs" />
+    <Compile Include="Data\IDrawingFormatable.cs" />
+    <Compile Include="Data\IPropertiesTarget.cs" />
+    <Compile Include="Data\IXLSBindable.cs" />
+    <Compile Include="Data\LayoutFileReader.cs" />
+    <Compile Include="Data\PrintWizarDataSource.cs" />
+    <Compile Include="Data\StudentInfo.cs" />
+    <Compile Include="Data\SupplementLayout.cs" />
+    <Compile Include="Data\TableDataSet.cs" />
+    <Compile Include="Data\TableInfo.cs" />
+    <Compile Include="Data\TableRow.cs" />
+    <Compile Include="UserControls\DisciplineLabel.xaml.cs">
+      <DependentUpon>DisciplineLabel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DoubleCaptionInfo.cs" />
+    <Compile Include="GridHelpers.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="IniFile.cs" />
+    <Compile Include="LayoutLoader.cs" />
+    <Compile Include="LayoutSide.cs" />
+    <Compile Include="LayoutType.cs" />
+    <Compile Include="PixelRuler.cs" />
+    <Compile Include="SheetLoader.cs" />
+    <Compile Include="SupplementPainter.cs" />
+    <Compile Include="UserControls\CircularProgressBar.xaml.cs" />
+    <Compile Include="UserControls\FontChooser.xaml.cs">
+      <DependentUpon>FontChooser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GuideLine.xaml.cs">
+      <DependentUpon>GuideLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Table.xaml.cs">
+      <DependentUpon>Table.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TextSpan.xaml.cs">
+      <DependentUpon>TextSpan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\XLSColumnBinding.xaml.cs">
+      <DependentUpon>XLSColumnBinding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ZSumbol.xaml.cs">
+      <DependentUpon>ZSumbol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\ItemPropertiesCommand.cs" />
+    <Compile Include="Windows\LicenseWindow.xaml.cs">
+      <DependentUpon>LicenseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Window1DockPanem.xaml.cs">
+      <DependentUpon>Window1DockPanem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ZSumbolPropertiesWindow.xaml.cs">
+      <DependentUpon>ZSumbolPropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NewLayoutWindow.xaml.cs">
+      <DependentUpon>NewLayoutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PrintWizardWindow.xaml.cs">
+      <DependentUpon>PrintWizardWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TablePropertiesWindow.xaml.cs">
+      <DependentUpon>TablePropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ItemPropertiesWindow.xaml.cs">
+      <DependentUpon>ItemPropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutProperties.cs" />
+    <Compile Include="LayoutWindow.xaml.cs">
+      <DependentUpon>LayoutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MoveThumb.cs" />
+    <Compile Include="PrintPreviewWindow.xaml.cs">
+      <DependentUpon>PrintPreviewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResizeThumb.cs" />
+    <Compile Include="ResizingAdorner.cs" />
+    <Compile Include="SelectLayoutWindow.xaml.cs">
+      <DependentUpon>SelectLayoutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TextLine.xaml.cs">
+      <DependentUpon>TextLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vector2DField.xaml.cs">
+      <DependentUpon>Vector2DField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WaitCursor.cs" />
+    <Compile Include="Windows\PropertiesWindow.xaml.cs">
+      <DependentUpon>PropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XpsDocumentPainter.cs" />
+    <Page Include="UserControls\ItemProperties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\LayoutEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddLabelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\DisciplineLabel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CircularProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\FontChooser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\GuideLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Table.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TextSpan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\XLSColumnBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ZSumbol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LicenseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Window1DockPanem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ZSumbolPropertiesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\NewLayoutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PrintWizardWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TablePropertiesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ItemPropertiesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LayoutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DragCanvas.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PrintPreviewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectLayoutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TextLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vector2DField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PropertiesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\k_pridnestrovyu_styagivayut_voennuyu_tehniku_ukrainy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\trianglify-background-6-600x260.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\colorful-triangles-background_ret_sml-900x500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons\footnote.png" />
+    <Resource Include="img\icons\insert_table.png" />
+    <Resource Include="img\icons\new.png" />
+    <Resource Include="img\icons\pagesize.png" />
+    <Resource Include="img\icons\print-preview.png" />
+    <Resource Include="img\icons\print.png" />
+    <Resource Include="img\icons\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons\CloseDoor.png" />
+    <Resource Include="img\icons\insert_symbol.png" />
+    <Resource Include="img\icons\open.png" />
+    <Resource Include="img\icons\picture.png" />
+    <Resource Include="img\icons\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LayoutFile\LayoutFileSystem.csproj">
+      <Project>{43e46063-2d76-45ac-a042-d39ed9aed216}</Project>
+      <Name>LayoutFileSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons\data-add-database-icon.png" />
+    <Resource Include="img\icons\OpenDoor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons\devices-print-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons\arrows-left-2-icon.png" />
+    <Resource Include="img\icons\arrows-right-2-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons\imagetools-edit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\grid.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons\license.PNG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
