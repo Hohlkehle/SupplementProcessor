@@ -419,7 +419,11 @@ namespace SupplementProcessor
                 //SetLockedState(true);
                 //ToggleLock.IsChecked = true;
 
-                StudentInfos.All((s) => s.Format(new SupplementFormatingInfo(IsSkipEmplyLines.IsChecked, IsAssessmentsOnLastLine.IsChecked, IsAssessmentByWordsOnly.IsChecked)));
+                StudentInfos.All((s) => s.Format(new SupplementFormatingInfo(
+                    IsSkipEmplyLines.IsChecked, 
+                    IsAssessmentsOnLastLine.IsChecked, 
+                    IsAssessmentByWordsOnly.IsChecked,
+                    IsHorizontalInnings.IsChecked)));
             }), new object[] { });
         }
 
@@ -457,13 +461,21 @@ namespace SupplementProcessor
                 //SetLockedState(true);
                 //ToggleLock.IsChecked = true;
 
-                StudentInfos.All((s) => s.Format(new SupplementFormatingInfo(IsSkipEmplyLines.IsChecked, IsAssessmentsOnLastLine.IsChecked, IsAssessmentByWordsOnly.IsChecked)));
+                StudentInfos.All((s) => s.Format(new SupplementFormatingInfo(
+                    IsSkipEmplyLines.IsChecked, 
+                    IsAssessmentsOnLastLine.IsChecked, 
+                    IsAssessmentByWordsOnly.IsChecked,
+                    IsHorizontalInnings.IsChecked)));
             }), new object[] { });
         }
 
         private void FormattingProperties_Changed(object sender, RoutedEventArgs e)
         {
-            StudentInfos.All((s) => s.Format(new SupplementFormatingInfo(IsSkipEmplyLines.IsChecked, IsAssessmentsOnLastLine.IsChecked, IsAssessmentByWordsOnly.IsChecked)));
+            StudentInfos.All((s) => s.Format(new SupplementFormatingInfo(
+                IsSkipEmplyLines.IsChecked, 
+                IsAssessmentsOnLastLine.IsChecked, 
+                IsAssessmentByWordsOnly.IsChecked,
+                IsHorizontalInnings.IsChecked)));
             UpdateLayoutEditors();
         }
         #endregion
@@ -798,6 +810,7 @@ namespace SupplementProcessor
             sp.LayoutProperties = LayoutProperties;
             sp.IsSkipEmplyLines = IsSkipEmplyLines.IsChecked == true;
             sp.IsAssessmentsOnLastLine = IsAssessmentsOnLastLine.IsChecked == true;
+            sp.IsHorizontalInnings = IsHorizontalInnings.IsChecked == true;
 
             var dv = sp.DrawSupplement(StudentInfos.Where(s => s == (StudentInfo)StudentsList.SelectedValue).Single(), (LayoutSide)CurrentSide);
 
@@ -805,7 +818,10 @@ namespace SupplementProcessor
             var horizontalBorderHeight = SystemParameters.ResizeFrameHorizontalBorderHeight;
             var verticalBorderWidth = SystemParameters.ResizeFrameVerticalBorderWidth;
             var captionHeight = SystemParameters.CaptionHeight;
-            var px = CentimeterToPixel(LayoutProperties.Size.X, LayoutProperties.Size.Y);
+
+            var px = IsHorizontalInnings.IsChecked.Value ? 
+                CentimeterToPixel(LayoutProperties.Size.X, LayoutProperties.Size.Y):
+                CentimeterToPixel(LayoutProperties.Size.Y, LayoutProperties.Size.X);
 
             printPreview.Width = px.X + 20 * verticalBorderWidth;
             printPreview.Height = px.Y + captionHeight + 24 * horizontalBorderHeight;
@@ -909,12 +925,18 @@ namespace SupplementProcessor
             //currentDoc.IsSelected = true;
 
             var pww = new PrintWizardWindow(this);
+            var px = IsHorizontalInnings.IsChecked.Value ?
+                new Point(820, 645) :
+                new Point(820, 880);
+
             PrintDialog printDialog = new System.Windows.Controls.PrintDialog();
+
             if (printDialog.ShowDialog() == true)
             {
                 Hide();
                 pww.PrintDialog = printDialog;
-
+                pww.Width = px.X;
+                pww.Height = px.Y;
                 try
                 {
                     pww.ShowDialog();
@@ -1228,7 +1250,11 @@ namespace SupplementProcessor
             //SetLockedState(true);
             //ToggleLock.IsChecked = true;
 
-            StudentInfos.All((s) => s.Format(new SupplementFormatingInfo(IsSkipEmplyLines.IsChecked, IsAssessmentsOnLastLine.IsChecked, IsAssessmentByWordsOnly.IsChecked)));
+            StudentInfos.All((s) => s.Format(new SupplementFormatingInfo(
+                IsSkipEmplyLines.IsChecked, 
+                IsAssessmentsOnLastLine.IsChecked, 
+                IsAssessmentByWordsOnly.IsChecked,
+                IsHorizontalInnings.IsChecked)));
         }
         [Obsolete]
         private void ToggleSide_Checked(object sender, RoutedEventArgs e)

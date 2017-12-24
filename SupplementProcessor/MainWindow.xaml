@@ -19,39 +19,39 @@
         <avalonDock:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     </Window.Resources>
     <Grid>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="343*"/>
-        </Grid.RowDefinitions>
-        <Border BorderBrush="#FFE6E6E6" BorderThickness="0,0,0,1" Grid.Row="1"/>
-        <DockPanel>
-            <DockPanel.Background>
-                <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
-                    <GradientStop Color="{DynamicResource {x:Static SystemColors.GradientActiveCaptionColorKey}}" Offset="0"/>
-                    <GradientStop Color="#FF99B4D1" Offset="1"/>
-                </LinearGradientBrush>
-            </DockPanel.Background>
-            <Menu DockPanel.Dock="Top" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Height="20">
-                <MenuItem Header="_FILE">
-                    <MenuItem x:Name="MenuItemCreateLayout" Header="_Create Layout" ToolTip="Load supplement project file"  HorizontalAlignment="Left" Click="MenuItemCreateLayout_Click">
-                        <MenuItem.Icon>
-                            <Image Source="img/icons/new.png" Width="16" Height="16"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header = "Load Layout"  ToolTip="Load supplement project file" x:Name="MenuItemLoadLayout" Click="MenuItemLoadLayout_Click">
-                        <MenuItem.Icon>
-                            <Image Source="img/icons/open.png" Width="16" Height="16"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="343*"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="#FFE6E6E6" BorderThickness="0,0,0,1" Grid.Row="1"/>
+            <DockPanel>
+                <DockPanel.Background>
+                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                        <GradientStop Color="{DynamicResource {x:Static SystemColors.GradientActiveCaptionColorKey}}" Offset="0"/>
+                        <GradientStop Color="#FF99B4D1" Offset="1"/>
+                    </LinearGradientBrush>
+                </DockPanel.Background>
+                <Menu DockPanel.Dock="Top" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Height="20">
+                    <MenuItem Header="_FILE">
+                        <MenuItem x:Name="MenuItemCreateLayout" Header="_Create Layout" ToolTip="Load supplement project file"  HorizontalAlignment="Left" Click="MenuItemCreateLayout_Click">
+                            <MenuItem.Icon>
+                                <Image Source="img/icons/new.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header = "Load Layout"  ToolTip="Load supplement project file" x:Name="MenuItemLoadLayout" Click="MenuItemLoadLayout_Click">
+                            <MenuItem.Icon>
+                                <Image Source="img/icons/open.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
                         <Separator HorizontalAlignment="Left" Width="160"/>
                         <MenuItem Header = "Load Sheet"  ToolTip="Load students from excel file"  x:Name="MenuItemLoadSheet" Click="ButtonLoadSheet_Click">
-                        <MenuItem.Icon>
-                            <Image Source="img/icons/data-add-database-icon.png" Width="16" Height="16"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                       
+                            <MenuItem.Icon>
+                                <Image Source="img/icons/data-add-database-icon.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+
                         <MenuItem Header = "Print preview"  ToolTip="Open print preview window" Click="ButtonPrintPreview_Click">
                             <MenuItem.Icon>
                                 <Image Source="img/icons/print-preview.png" Width="16" Height="16"/>
@@ -63,214 +63,215 @@
                             </MenuItem.Icon>
                         </MenuItem>
                         <Separator HorizontalAlignment="Left" Width="160"/>
-                    <MenuItem Header="_Exit" x:Name="MenuItemExit" Click="MenuItemExit_Click">
-                        <MenuItem.Icon>
-                            <Image Visibility="Hidden" Source="img/icons/OpenDoor.png" Width="16" Height="16"/>
-                        </MenuItem.Icon>
+                        <MenuItem Header="_Exit" x:Name="MenuItemExit" Click="MenuItemExit_Click">
+                            <MenuItem.Icon>
+                                <Image Visibility="Hidden" Source="img/icons/OpenDoor.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
                     </MenuItem>
-                </MenuItem>
-                <MenuItem Header="TOOL_S">
-                    <MenuItem x:Name="MenuItemCalibrateLayout" Header="_Calibration Window" HorizontalAlignment="Left" Click="ButtonPrintCalibration_Click">
-                        <MenuItem.Icon>
-                            <Image Source="img/icons/pagesize.png" Width="16" Height="16"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem x:Name="MenuItemResetWorkspace" Header="_Reset Workspace" HorizontalAlignment="Left" Click="ButtonResetWorkspace_Click">
+                    <MenuItem Header="TOOL_S">
+                        <MenuItem x:Name="MenuItemCalibrateLayout" Header="_Calibration Window" HorizontalAlignment="Left" Click="ButtonPrintCalibration_Click">
+                            <MenuItem.Icon>
+                                <Image Source="img/icons/pagesize.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="MenuItemResetWorkspace" Header="_Reset Workspace" HorizontalAlignment="Left" Click="ButtonResetWorkspace_Click">
 
-                    </MenuItem>
+                        </MenuItem>
                         <MenuItem x:Name="MenuItemLicense" Header="License..." HorizontalAlignment="Left" Click="MenuItemLicense_Click"></MenuItem>
-                </MenuItem>
-                <MenuItem Header="WI_NDOW">
-                    <MenuItem x:Name="MenuItemPropertiesWindow" Header="_Properties " HorizontalAlignment="Left" Click="MenuItemPropertiesWindow_Click">
-                        <MenuItem.Icon>
-                            <Image Visibility="Hidden" Source="img/icons/imagetools-edit-icon.png" Width="16" Height="16"/>
-                        </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem x:Name="MenuItemLayoutWindow" Visibility="Collapsed" Header="Lay_out Window" HorizontalAlignment="Left" Click="MenuItemLayoutWindow_Click">
-                        <MenuItem.Icon>
-                            <Image Visibility="Hidden" Source="img/icons/open.png" Width="16" Height="16"/>
-                        </MenuItem.Icon>
+                    <MenuItem Header="WI_NDOW">
+                        <MenuItem x:Name="MenuItemPropertiesWindow" Header="_Properties " HorizontalAlignment="Left" Click="MenuItemPropertiesWindow_Click">
+                            <MenuItem.Icon>
+                                <Image Visibility="Hidden" Source="img/icons/imagetools-edit-icon.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="MenuItemLayoutWindow" Visibility="Collapsed" Header="Lay_out Window" HorizontalAlignment="Left" Click="MenuItemLayoutWindow_Click">
+                            <MenuItem.Icon>
+                                <Image Visibility="Hidden" Source="img/icons/open.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="MenuItemStudentsWindow" Header="Stu_dents " HorizontalAlignment="Left" Click="MenuItemStudentsWindow_Click">
+                            <MenuItem.Icon>
+                                <Image Visibility="Hidden" Source="img/icons/footnote.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
                     </MenuItem>
-                    <MenuItem x:Name="MenuItemStudentsWindow" Header="Stu_dents " HorizontalAlignment="Left" Click="MenuItemStudentsWindow_Click">
-                        <MenuItem.Icon>
-                            <Image Visibility="Hidden" Source="img/icons/footnote.png" Width="16" Height="16"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-            </Menu>
-        </DockPanel>
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50*"/>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="6"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Label x:Name="LabelLayoutName" Visibility="Collapsed" DockPanel.Dock="Left" Content="Label - Front Side"  Grid.Row="0" Grid.Column="0" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Arial Black" FontStyle="Italic" FontSize="16" Height="28" Width="0"/>
-            <StackPanel Height="28"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Orientation="Horizontal">
-                <ToggleButton Visibility="Collapsed" Margin="0,0,4,0"  Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                    <Grid>
-                        <Image Source="img/icons/imagetools-edit-icon.png"/>
-                    </Grid>
-                </ToggleButton>
-                <Button x:Name="ButtonLoadSheet" ToolTip="Load students from excel file" Margin="0,0,4,0" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="24" Height="24"  Click="ButtonLoadSheet_Click"  BorderBrush="{DynamicResource {x:Static SystemColors.ControlBrush}}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
-                    <Grid>
-                        <Image Source="img/icons/data-add-database-icon.png"/>
-                    </Grid>
-                </Button>
-                <Button x:Name="ButtonPrintPreview" ToolTip="Open print preview window"  Margin="0,0,4,0" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="24" Height="24"  Click="ButtonPrintPreview_Click"  BorderBrush="{DynamicResource {x:Static SystemColors.ControlBrush}}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
-                    <Grid>
-                        <Image Source="img/icons/print-preview.png"/>
-                    </Grid>
-                </Button>
-                <Button x:Name="ButtonPrintCopy" ToolTip="Start printing wizard"  Margin="0,0,4,0" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="24" Height="24" Click="ButtonStartPrintingWizard_Click"  BorderBrush="{DynamicResource {x:Static SystemColors.ControlBrush}}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
-                    <Grid>
-                        <Image Source="img/icons/print.png"/>
-                    </Grid>
-                </Button>
+                </Menu>
+            </DockPanel>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="LabelLayoutName" Visibility="Collapsed" DockPanel.Dock="Left" Content="Label - Front Side"  Grid.Row="0" Grid.Column="0" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Arial Black" FontStyle="Italic" FontSize="16" Height="28" Width="0"/>
+                <StackPanel Height="28"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Orientation="Horizontal">
+                    <ToggleButton Visibility="Collapsed" Margin="0,0,4,0"  Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                        <Grid>
+                            <Image Source="img/icons/imagetools-edit-icon.png"/>
+                        </Grid>
+                    </ToggleButton>
+                    <Button x:Name="ButtonLoadSheet" ToolTip="Load students from excel file" Margin="0,0,4,0" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="24" Height="24"  Click="ButtonLoadSheet_Click"  BorderBrush="{DynamicResource {x:Static SystemColors.ControlBrush}}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                        <Grid>
+                            <Image Source="img/icons/data-add-database-icon.png"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="ButtonPrintPreview" ToolTip="Open print preview window"  Margin="0,0,4,0" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="24" Height="24"  Click="ButtonPrintPreview_Click"  BorderBrush="{DynamicResource {x:Static SystemColors.ControlBrush}}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                        <Grid>
+                            <Image Source="img/icons/print-preview.png"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="ButtonPrintCopy" ToolTip="Start printing wizard"  Margin="0,0,4,0" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="24" Height="24" Click="ButtonStartPrintingWizard_Click"  BorderBrush="{DynamicResource {x:Static SystemColors.ControlBrush}}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                        <Grid>
+                            <Image Source="img/icons/print.png"/>
+                        </Grid>
+                    </Button>
 
-                <!--<ToggleSwitch:HorizontalToggleSwitch x:Name="ToggleSide" Visibility="Collapsed" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" CheckedContent="FRONT SIDE" UncheckedContent="REAR SIDE" IsChecked="True" Checked="ToggleSide_Checked" Unchecked="ToggleSide_Unchecked" Width="125" Height="20"/>
+                    <!--<ToggleSwitch:HorizontalToggleSwitch x:Name="ToggleSide" Visibility="Collapsed" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" CheckedContent="FRONT SIDE" UncheckedContent="REAR SIDE" IsChecked="True" Checked="ToggleSide_Checked" Unchecked="ToggleSide_Unchecked" Width="125" Height="20"/>
                 <ToggleSwitch:HorizontalToggleSwitch x:Name="ToggleLock" Visibility="Collapsed" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1"  Margin="10,0,0,0" VerticalAlignment="Top" Checked="ToggleLock_Checked" Unchecked="ToggleLock_Unchecked" CheckedContent="UNLOCKED" UncheckedContent="LOCKED" Width="118" IsChecked="True" Height="20"/>-->
 
-            </StackPanel>
-            <Border BorderBrush="#FF3399FF" BorderThickness="0,0,0,1" Grid.Row="1" Margin="-10,0,-10,0" Grid.ColumnSpan="2"/>
-        </Grid>
+                </StackPanel>
+                <Border BorderBrush="#FF3399FF" BorderThickness="0,0,0,1" Grid.Row="1" Margin="-10,0,-10,0" Grid.ColumnSpan="2"/>
+            </Grid>
 
-        <avalonDock:DockingManager Visibility="Visible" Grid.Row="2" Grid.Column="0" x:Name="dockManager" AllowMixedOrientation="True" Grid.RowSpan="1" Margin="0,3,0,0" ActiveContentChanged="dockManager_ActiveContentChanged" Loaded="dockManager_Loaded" >
-            <avalonDock:DockingManager.DocumentHeaderTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding IconSource}" Margin="0,0,4,0"/>
-                        <TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis"/>
-                    </StackPanel>
-                </DataTemplate>
-            </avalonDock:DockingManager.DocumentHeaderTemplate>
-            <avalonDock:LayoutRoot>
-                <avalonDock:LayoutPanel Orientation="Horizontal" >
-                    <avalonDock:LayoutAnchorablePaneGroup DockWidth="275">
-                        <avalonDock:LayoutAnchorablePane>
+            <avalonDock:DockingManager Visibility="Visible" Grid.Row="2" Grid.Column="0" x:Name="dockManager" AllowMixedOrientation="True" Grid.RowSpan="1" Margin="0,3,0,0" ActiveContentChanged="dockManager_ActiveContentChanged" Loaded="dockManager_Loaded" >
+                <avalonDock:DockingManager.DocumentHeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding IconSource}" Margin="0,0,4,0"/>
+                            <TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </avalonDock:DockingManager.DocumentHeaderTemplate>
+                <avalonDock:LayoutRoot>
+                    <avalonDock:LayoutPanel Orientation="Horizontal" >
+                        <avalonDock:LayoutAnchorablePaneGroup DockWidth="275">
+                            <avalonDock:LayoutAnchorablePane>
                                 <avalonDock:LayoutAnchorable ContentId="studentsWindow" Title="Students" CanClose="False" AutoHideWidth="275" AutoHideMinWidth="275">
-                                <Grid>
-                                    <Border BorderBrush="#FFC1C3CD" BorderThickness="1,0,1,0"/>
-                                    <ListBox x:Name="StudentsList" Margin="10,6,5,6" SelectionChanged="StudentsList_SelectionChanged"/>
-                                    <Button x:Name="ButtonLoadXls" Visibility="Hidden" ToolTip="Load students from excel file" HorizontalAlignment="Left" Margin="10,474,0,0" VerticalAlignment="Top" Width="245" Height="24" FontSize="14" FontFamily="Wide Latin" BorderThickness="4" Click="ButtonLoadSheet_Click" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="24*"/>
-                                                <ColumnDefinition Width="24"/>
-                                                <ColumnDefinition Width="77*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Image Source="img/icons/data-add-database-icon.png" Grid.Column="0" HorizontalAlignment="Left"></Image>
-                                            <TextBlock Grid.Column="2" VerticalAlignment="Center" Grid.ColumnSpan="2">Load Students Sheet</TextBlock>
-                                        </Grid>
-                                        <Button.Background>
-                                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                                <GradientStop Color="#FFA0A0A0" Offset="0"/>
-                                                <GradientStop Color="#FF5BA809" Offset="1"/>
-                                            </LinearGradientBrush>
-                                        </Button.Background>
-                                    </Button>
-                                    <Button x:Name="ButtonStartPrintingWizard" Visibility="Hidden" HorizontalAlignment="Left" Margin="10,498,0,0" VerticalAlignment="Top" Width="245" Height="24" FontSize="14" FontFamily="Wide Latin" BorderThickness="4" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" Click="ButtonStartPrintingWizard_Click">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="24*"/>
-                                                <ColumnDefinition Width="24"/>
-                                                <ColumnDefinition Width="77*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Image Source="img/icons/print.png" Grid.Column="0" HorizontalAlignment="Left"></Image>
-                                            <TextBlock Grid.Column="2" VerticalAlignment="Center" Grid.ColumnSpan="2">Start printing</TextBlock>
-                                        </Grid>
-                                        <Button.Background>
-                                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                                <GradientStop Color="#FFA0A0A0" Offset="0"/>
-                                                <GradientStop Color="#FF5BA809" Offset="1"/>
-                                            </LinearGradientBrush>
-                                        </Button.Background>
-                                    </Button>
-
-                                   
-
-                                    <Grid Height="516" Width="240">
-                                        
-                                       
-                                    </Grid>
-                                </Grid>
-                            </avalonDock:LayoutAnchorable>
-                        </avalonDock:LayoutAnchorablePane>
-                    </avalonDock:LayoutAnchorablePaneGroup>
-                    <avalonDock:LayoutDocumentPaneGroup>
-                        <avalonDock:LayoutDocumentPane>
-                            <avalonDock:LayoutDocument ContentId="document1" Title="Front Side" CanClose="False">
-                                <ScrollViewer x:Name="document1ScrollViewer" HorizontalScrollBarVisibility="Auto">
                                     <Grid>
-                                        <Image x:Name="ImageFrontBackground" Source="img/grid.jpg" Stretch="None" HorizontalAlignment="Left"  Margin="265,5,0,-1" Grid.Row="2" VerticalAlignment="Top" Height="559" Width="793" />
-                                        <UserControls:LayoutEditor Visibility="Visible" x:Name="FrontLayoutEditor" HorizontalAlignment="Left" Height="559" Margin="0,5,-162,0" VerticalAlignment="Top" Width="793"/>
+                                        <Border BorderBrush="#FFC1C3CD" BorderThickness="1,0,1,0"/>
+                                        <ListBox x:Name="StudentsList" Margin="10,6,5,6" SelectionChanged="StudentsList_SelectionChanged"/>
+                                        <Button x:Name="ButtonLoadXls" Visibility="Hidden" ToolTip="Load students from excel file" HorizontalAlignment="Left" Margin="10,474,0,0" VerticalAlignment="Top" Width="245" Height="24" FontSize="14" FontFamily="Wide Latin" BorderThickness="4" Click="ButtonLoadSheet_Click" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="24*"/>
+                                                    <ColumnDefinition Width="24"/>
+                                                    <ColumnDefinition Width="77*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="img/icons/data-add-database-icon.png" Grid.Column="0" HorizontalAlignment="Left"></Image>
+                                                <TextBlock Grid.Column="2" VerticalAlignment="Center" Grid.ColumnSpan="2">Load Students Sheet</TextBlock>
+                                            </Grid>
+                                            <Button.Background>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="#FFA0A0A0" Offset="0"/>
+                                                    <GradientStop Color="#FF5BA809" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Button.Background>
+                                        </Button>
+                                        <Button x:Name="ButtonStartPrintingWizard" Visibility="Hidden" HorizontalAlignment="Left" Margin="10,498,0,0" VerticalAlignment="Top" Width="245" Height="24" FontSize="14" FontFamily="Wide Latin" BorderThickness="4" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" Click="ButtonStartPrintingWizard_Click">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="24*"/>
+                                                    <ColumnDefinition Width="24"/>
+                                                    <ColumnDefinition Width="77*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="img/icons/print.png" Grid.Column="0" HorizontalAlignment="Left"></Image>
+                                                <TextBlock Grid.Column="2" VerticalAlignment="Center" Grid.ColumnSpan="2">Start printing</TextBlock>
+                                            </Grid>
+                                            <Button.Background>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="#FFA0A0A0" Offset="0"/>
+                                                    <GradientStop Color="#FF5BA809" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Button.Background>
+                                        </Button>
+
+
+
+                                        <Grid Height="516" Width="240">
+
+
+                                        </Grid>
                                     </Grid>
-                                </ScrollViewer>
-                            </avalonDock:LayoutDocument>
-                            <avalonDock:LayoutDocument ContentId="document2" Title="Rear Side" CanClose="False">
-                                <ScrollViewer x:Name="document2ScrollViewer" HorizontalScrollBarVisibility="Auto">
-                                    <Grid>
-                                        <Image x:Name="ImageRearBackground" Source="img/grid.jpg" Stretch="None" HorizontalAlignment="Left"  Margin="265,5,0,-1" Grid.Row="2" VerticalAlignment="Top" Height="559" Width="793" />
-                                        <UserControls:LayoutEditor Visibility="Visible" x:Name="RearLayoutEditor" HorizontalAlignment="Left" Height="559" Margin="0,5,-162,0" VerticalAlignment="Top" Width="793"/>
-                                    </Grid>
-                                </ScrollViewer>
-                            </avalonDock:LayoutDocument>
-                        </avalonDock:LayoutDocumentPane>
-                    </avalonDock:LayoutDocumentPaneGroup>
-                    <avalonDock:LayoutAnchorablePaneGroup DockWidth="275" FloatingWidth="275">
-                        <avalonDock:LayoutAnchorablePane>
+                                </avalonDock:LayoutAnchorable>
+                            </avalonDock:LayoutAnchorablePane>
+                        </avalonDock:LayoutAnchorablePaneGroup>
+                        <avalonDock:LayoutDocumentPaneGroup>
+                            <avalonDock:LayoutDocumentPane>
+                                <avalonDock:LayoutDocument ContentId="document1" Title="Front Side" CanClose="False">
+                                    <ScrollViewer x:Name="document1ScrollViewer" HorizontalScrollBarVisibility="Auto">
+                                        <Grid>
+                                            <Image x:Name="ImageFrontBackground" Source="img/grid.jpg" Stretch="None" HorizontalAlignment="Left"  Margin="265,5,0,-1" Grid.Row="2" VerticalAlignment="Top" Height="559" Width="793" />
+                                            <UserControls:LayoutEditor Visibility="Visible" x:Name="FrontLayoutEditor" HorizontalAlignment="Left" Height="559" Margin="0,5,-162,0" VerticalAlignment="Top" Width="793"/>
+                                        </Grid>
+                                    </ScrollViewer>
+                                </avalonDock:LayoutDocument>
+                                <avalonDock:LayoutDocument ContentId="document2" Title="Rear Side" CanClose="False">
+                                    <ScrollViewer x:Name="document2ScrollViewer" HorizontalScrollBarVisibility="Auto">
+                                        <Grid>
+                                            <Image x:Name="ImageRearBackground" Source="img/grid.jpg" Stretch="None" HorizontalAlignment="Left"  Margin="265,5,0,-1" Grid.Row="2" VerticalAlignment="Top" Height="559" Width="793" />
+                                            <UserControls:LayoutEditor Visibility="Visible" x:Name="RearLayoutEditor" HorizontalAlignment="Left" Height="559" Margin="0,5,-162,0" VerticalAlignment="Top" Width="793"/>
+                                        </Grid>
+                                    </ScrollViewer>
+                                </avalonDock:LayoutDocument>
+                            </avalonDock:LayoutDocumentPane>
+                        </avalonDock:LayoutDocumentPaneGroup>
+                        <avalonDock:LayoutAnchorablePaneGroup DockWidth="275" FloatingWidth="275">
+                            <avalonDock:LayoutAnchorablePane>
                                 <avalonDock:LayoutAnchorable ContentId="settingsWindow" Title="Properties" CanClose="False" AutoHideWidth="275" AutoHideMinWidth="275">
-                                <Grid>
-                                    <Border BorderBrush="#FFC1C3CD" BorderThickness="1,0,1,0"/>
-                                    <GroupBox Header="Layout Dimentions" Margin="9,15,0,0" VerticalAlignment="Top" Height="83" HorizontalAlignment="Left" Width="248">
-                                        <Grid>
-                                            <local:Vector2DField x:Name="Vector2DLayoutOffset" HorizontalAlignment="Left" Margin="5,30,-17,0" VerticalAlignment="Top" Height="29" Width="258" Caption="Offset"/>
-                                            <local:Vector2DField x:Name="Vector2DLayoutSize" HorizontalAlignment="Left" Margin="5,2,-17,0" VerticalAlignment="Top" Height="28" Width="258"  Caption="Size (cm)" X="21" Y="14.8"/>
-                                        </Grid>
-                                    </GroupBox>
+                                    <Grid>
+                                        <Border BorderBrush="#FFC1C3CD" BorderThickness="1,0,1,0"/>
+                                        <GroupBox Header="Layout Dimentions" Margin="9,15,0,0" VerticalAlignment="Top" Height="83" HorizontalAlignment="Left" Width="248">
+                                            <Grid>
+                                                <local:Vector2DField x:Name="Vector2DLayoutOffset" HorizontalAlignment="Left" Margin="5,30,-17,0" VerticalAlignment="Top" Height="29" Width="258" Caption="Offset"/>
+                                                <local:Vector2DField x:Name="Vector2DLayoutSize" HorizontalAlignment="Left" Margin="5,2,-17,0" VerticalAlignment="Top" Height="28" Width="258"  Caption="Size (cm)" X="21" Y="14.8"/>
+                                            </Grid>
+                                        </GroupBox>
                                         <GroupBox Visibility="Collapsed" Header="Print" Margin="12,-209,0,0" VerticalAlignment="Top" Height="68" HorizontalAlignment="Left" Width="248">
-                                        <Grid>
-                                            <Label Content="Layout" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="99"/>
-                                            <ComboBox x:Name="ComboBoxLayoutsNames" HorizontalAlignment="Left" Margin="114,10,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" SelectionChanged="ComboBoxLayoutsNames_SelectionChanged" Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}" />
-                                            <ComboBox x:Name="ComboBoxLayoutSide" HorizontalAlignment="Left" Margin="114,10,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" SelectionChanged="ComboBoxLayoutPage_SelectionChanged" Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}" >
-                                                <ComboBoxItem Content="Front side"/>
-                                                <ComboBoxItem Content="Rear side"/>
-                                            </ComboBox>
-                                            <Button x:Name="ButtonEditLayout" HorizontalAlignment="Left" Margin="137,8,0,0" VerticalAlignment="Top" Width="22" Click="ButtonEditLayout_Click" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" Height="22">
-                                                <Grid>
-                                                    <Image Source="img/icons/imagetools-edit-icon.png" Width="16" Height="16"/>
-                                                </Grid>
-                                            </Button>
-                                        </Grid>
-                                    </GroupBox>
-                                    <GroupBox Header="Formatting Properties" Margin="10,98,0,0" VerticalAlignment="Top" Height="92" HorizontalAlignment="Left" Width="247">
-                                        <Grid Margin="0,0,0,0">
+                                            <Grid>
+                                                <Label Content="Layout" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="99"/>
+                                                <ComboBox x:Name="ComboBoxLayoutsNames" HorizontalAlignment="Left" Margin="114,10,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" SelectionChanged="ComboBoxLayoutsNames_SelectionChanged" Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}" />
+                                                <ComboBox x:Name="ComboBoxLayoutSide" HorizontalAlignment="Left" Margin="114,10,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" SelectionChanged="ComboBoxLayoutPage_SelectionChanged" Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}" >
+                                                    <ComboBoxItem Content="Front side"/>
+                                                    <ComboBoxItem Content="Rear side"/>
+                                                </ComboBox>
+                                                <Button x:Name="ButtonEditLayout" HorizontalAlignment="Left" Margin="137,8,0,0" VerticalAlignment="Top" Width="22" Click="ButtonEditLayout_Click" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" Height="22">
+                                                    <Grid>
+                                                        <Image Source="img/icons/imagetools-edit-icon.png" Width="16" Height="16"/>
+                                                    </Grid>
+                                                </Button>
+                                            </Grid>
+                                        </GroupBox>
+                                        <GroupBox Header="Formatting Properties" Margin="10,98,0,0" VerticalAlignment="Top" Height="117" HorizontalAlignment="Left" Width="247">
+                                            <Grid Margin="0,0,0,0">
                                                 <CheckBox x:Name="ChackBoxLockChanges" Content="Lock changes" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Click="CheckBoxLockChanges_Click" Visibility="Hidden"/>
                                                 <CheckBox x:Name="IsSkipEmplyLines" Content="Skip empty lines" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Visibility="Visible" />
                                                 <CheckBox x:Name="IsAssessmentsOnLastLine" Content="Assessments on last line" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Visibility="Visible" Checked="FormattingProperties_Changed" Unchecked="FormattingProperties_Changed"/>
-                                            <CheckBox x:Name="IsAssessmentByWordsOnly" Content="Assessments by words only" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Visibility="Visible" Checked="FormattingProperties_Changed" Unchecked="FormattingProperties_Changed"/>
-                                            <!--<ToggleSwitch:HorizontalToggleSwitch x:Name="IsAssessmentsOnLastLine" HorizontalAlignment="Left" Margin="142,8,0,0" VerticalAlignment="Top" Width="95" CheckedContent="YES" UncheckedContent="NO"/>-->
-                                            <!--<Label Content="Assessments On Last Line" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="-2,8,0,0"/>
+                                                <CheckBox x:Name="IsAssessmentByWordsOnly" Content="Assessments by words only" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Visibility="Visible" Checked="FormattingProperties_Changed" Unchecked="FormattingProperties_Changed"/>
+                                                <CheckBox x:Name="IsHorizontalInnings" Content="Use Horizontal Paper Innings" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" Visibility="Visible" Checked="FormattingProperties_Changed" Unchecked="FormattingProperties_Changed" Height="19"/>
+                                                <!--<ToggleSwitch:HorizontalToggleSwitch x:Name="IsAssessmentsOnLastLine" HorizontalAlignment="Left" Margin="142,8,0,0" VerticalAlignment="Top" Width="95" CheckedContent="YES" UncheckedContent="NO"/>-->
+                                                <!--<Label Content="Assessments On Last Line" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="-2,8,0,0"/>
                                             <ToggleSwitch:HorizontalToggleSwitch x:Name="IsSkipEmplyLines" HorizontalAlignment="Left" Margin="142,39,0,0" VerticalAlignment="Top" Width="95" CheckedContent="YES" UncheckedContent="NO"/>
                                             <Label Content="Skip Emply Lines" HorizontalAlignment="Left" Margin="-2,39,0,0" VerticalAlignment="Top"/>-->
-                                        </Grid>
-                                    </GroupBox>
-                                    <GroupBox Header="Tools" Margin="12,195,0,0" VerticalAlignment="Top" Height="92" HorizontalAlignment="Left" Width="247">
-                                        <Grid>
-                                            <Button x:Name="ButtonPrintCalibration" Content="Open calibration window" DockPanel.Dock="Right" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="215" Height="24"  Click="ButtonPrintCalibration_Click" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
-                                        </Grid>
-                                    </GroupBox>
-                                </Grid>
-                            </avalonDock:LayoutAnchorable>
-                        </avalonDock:LayoutAnchorablePane>
-                    </avalonDock:LayoutAnchorablePaneGroup>
-                </avalonDock:LayoutPanel>
-            </avalonDock:LayoutRoot>
-        </avalonDock:DockingManager>
-        
+                                            </Grid>
+                                        </GroupBox>
+                                        <GroupBox Header="Tools" Margin="12,220,0,0" VerticalAlignment="Top" Height="92" HorizontalAlignment="Left" Width="247">
+                                            <Grid>
+                                                <Button x:Name="ButtonPrintCalibration" Content="Open calibration window" DockPanel.Dock="Right" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="215" Height="24"  Click="ButtonPrintCalibration_Click" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+                                            </Grid>
+                                        </GroupBox>
+                                    </Grid>
+                                </avalonDock:LayoutAnchorable>
+                            </avalonDock:LayoutAnchorablePane>
+                        </avalonDock:LayoutAnchorablePaneGroup>
+                    </avalonDock:LayoutPanel>
+                </avalonDock:LayoutRoot>
+            </avalonDock:DockingManager>
+
         </Grid>
         <Grid>
             <ProgressBar x:Name="ProgressBarLoading" HorizontalAlignment="Left" Height="10" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="233" Value="99" Visibility="Collapsed" Maximum="100"/>
@@ -307,7 +308,7 @@
                         <Setter Property="Visibility" Value="Collapsed"/>
                     </Style>
                 </xctk:BusyIndicator.ProgressBarStyle>
-                
+
             </xctk:BusyIndicator>
         </Grid>
     </Grid>

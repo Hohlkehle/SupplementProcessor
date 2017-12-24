@@ -127,13 +127,17 @@ namespace SupplementProcessor.Windows
             sp.LayoutProperties = m_SupplementLayout.GetProperties(CurrentSide);
             sp.IsSkipEmplyLines = mainWindow.IsSkipEmplyLines.IsChecked == true;
             sp.IsAssessmentsOnLastLine = mainWindow.IsAssessmentsOnLastLine.IsChecked == true;
+            sp.IsHorizontalInnings = mainWindow.IsHorizontalInnings.IsChecked == true;
 
             m_DrawingVisual = sp.DrawSupplement(CurrentStudent, (LayoutSide)CurrentSide);
 
             var horizontalBorderHeight = SystemParameters.ResizeFrameHorizontalBorderHeight;
             var verticalBorderWidth = SystemParameters.ResizeFrameVerticalBorderWidth;
             var captionHeight = SystemParameters.CaptionHeight;
-            var px = MainWindow.CentimeterToPixel(sp.DocumentSize.X, sp.DocumentSize.Y);
+
+            var px = mainWindow.IsHorizontalInnings.IsChecked.Value ?
+                MainWindow.CentimeterToPixel(sp.DocumentSize.X, sp.DocumentSize.Y) :
+                MainWindow.CentimeterToPixel(sp.DocumentSize.Y, sp.DocumentSize.X);
 
             documentViewer.Width = px.X + verticalBorderWidth;
             documentViewer.Height = px.Y + captionHeight + horizontalBorderHeight;

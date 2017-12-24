@@ -1,5 +1,6 @@
 ﻿using SupplementProcessor.Data;
 using SupplementProcessor.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -30,6 +31,7 @@ namespace SupplementProcessor
         public int OverrideFontWeight { get; set; }
 
         public SupplementFormatingInfo SupplementFormatingInfo { set; get; }
+        public bool IsHorizontalInnings { get; internal set; }
 
         public SupplementPainter()
         {
@@ -59,6 +61,13 @@ namespace SupplementProcessor
             using (DrawingContext ctx = visual.RenderOpen())
             {
                 //RenderOptions.SetEdgeMode(this, EdgeMode.Aliased);
+                if (!IsHorizontalInnings)
+                {
+                    var angle = 90;
+                    var center = MainWindow.CentimeterToPixel((DocumentSize.Y) / 2, (DocumentSize.X - 5) / 2);
+                    //ctx.DrawEllipse(Brushes.Black, new Pen(), center, 10, 10);
+                    ctx.PushTransform(new RotateTransform(angle, center.X, center.Y));
+                }
 
                 if (side == LayoutSide.Front)
                 {
@@ -68,7 +77,10 @@ namespace SupplementProcessor
                 {
                     DrawRearPage(ctx, LayoutProperties);
                 }
+                    
             }
+            
+            
 
             return visual;
         }

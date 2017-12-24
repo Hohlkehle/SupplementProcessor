@@ -11,6 +11,7 @@ namespace SupplementProcessor.Data
         private bool m_AssessmentByWordsOnly;
         private bool m_AssessmentsOnLastLine;
         private bool m_SkipEmplyLines;
+        private bool m_HorizontalInnings;
 
         public bool AssessmentByWordsOnly
         {
@@ -30,15 +31,18 @@ namespace SupplementProcessor.Data
             set { m_SkipEmplyLines = value; }
         }
 
-        public SupplementFormatingInfo(bool? skipEmplyLines, bool? assessmentsOnLastLine, bool? assessmentByWordsOnly)
-            : this((bool)skipEmplyLines, (bool)assessmentsOnLastLine, (bool)assessmentByWordsOnly)
+        public bool HorizontalInnings { get => m_HorizontalInnings; set => m_HorizontalInnings = value; }
+
+        public SupplementFormatingInfo(bool? skipEmplyLines, bool? assessmentsOnLastLine, bool? assessmentByWordsOnly, bool? horizontalInnings)
+            : this((bool)skipEmplyLines, (bool)assessmentsOnLastLine, (bool)assessmentByWordsOnly, (bool)horizontalInnings)
         { }
 
-        public SupplementFormatingInfo(bool skipEmplyLines, bool assessmentsOnLastLine, bool assessmentByWordsOnly)
+        public SupplementFormatingInfo(bool skipEmplyLines, bool assessmentsOnLastLine, bool assessmentByWordsOnly, bool horizontalInnings)
         {
             m_AssessmentByWordsOnly = assessmentByWordsOnly;
             m_AssessmentsOnLastLine = assessmentsOnLastLine;
             m_SkipEmplyLines = skipEmplyLines;
+            m_HorizontalInnings = horizontalInnings;
         }
        
     }
