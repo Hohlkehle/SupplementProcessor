@@ -73,6 +73,11 @@ namespace SupplementProcessor
 
         private void CheckFile(string fileName)
         {
+            if (!IsOfficeInstalled())
+            {
+                LastError = "Unable to open the excel document! The Microsoft Office Excel does not installed.";
+                throw new FileLoadException(LastError);
+            }
             if (IsFileLocked(new FileInfo(fileName)))
             {
                 LastError = "Unable to open the excel document! The file is opened in the other application.";
@@ -377,6 +382,17 @@ namespace SupplementProcessor
             ExcelFileFormat = "Unknown";
 
             return false;
+        }
+
+        public static bool IsOfficeInstalled()
+        {
+            Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
+                @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\Excel.exe");
+            if (key != null)
+            {
+                key.Close();
+            }
+            return key != null;
         }
 
         /// <summary>

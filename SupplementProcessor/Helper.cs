@@ -82,7 +82,7 @@ namespace SupplementProcessor
             "вісім",
             "дев’ять",
             "десять",
-            "одинадцать",
+            "одинадцять",
             "дванадцять"
         };
 
@@ -309,6 +309,17 @@ namespace SupplementProcessor
             //    break;
             //}
             return "id";
+        }
+
+        public static bool IsOfficeInstalled()
+        {
+            Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
+                @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\Winword.exe");
+            if (key != null)
+            {
+                key.Close();
+            }
+            return key != null;
         }
 
         public static class NTP
